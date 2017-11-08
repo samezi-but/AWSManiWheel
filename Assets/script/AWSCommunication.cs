@@ -9,7 +9,7 @@ public class AWSCommunication : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-
+        StartCoroutine(getManiWheelCounterJSON());
 	}
 
 	// Update is called once per frame
@@ -24,15 +24,18 @@ public class AWSCommunication : MonoBehaviour
         public int wheelCounter;
     }
 
-    public void clickCommunicationButton(int wheelCount, int keta)
+    public maniJSON getJSON;
+
+    public void clickCommunicationButton(int wheelCount)
     {
-        StartCoroutine(postManiWheelCounterJSON(wheelCount,keta));
+        StartCoroutine(postManiWheelCounterJSON(wheelCount));
     }
 
-    private IEnumerator postManiWheelCounterJSON(int wheelCount, int keta)
+    // マニ車のカウントアップするメソッド
+    private IEnumerator postManiWheelCounterJSON(int wheelCount)
     {
         maniJSON maniJSONdata = new maniJSON();
-        maniJSONdata.keta = keta;
+        maniJSONdata.keta = 1;
         maniJSONdata.wheelCounter = wheelCount;
         string myjson = JsonUtility.ToJson(maniJSONdata);
 
@@ -43,7 +46,33 @@ public class AWSCommunication : MonoBehaviour
         request.SetRequestHeader("Content-Type", "application/json");
         yield return request.SendWebRequest();
 
+        // デバッグに使ったコード
         //text.text = request.responseCode.ToString();
         //errorText.text = request.error;
+    }
+
+    // マニ車のカウンタの１桁目を取得するメソッド
+    private IEnumerator getManiWheelCounterJSON()
+    {
+        UnityWebRequest request = UnityWebRequest.Get(url);
+
+        yield return request.SendWebRequest();
+
+        if (request.isNetworkError)
+        {
+            Debug.Log(request.error);
+        }
+        else
+        {
+            Debug.Log(request.responseCode);
+            if(request.responseCode == 200)
+            {
+                // あとで使う（JSON)
+                //Debug.Log(request.downloadHandler.text);
+                getJSON = JsonUtility.FromJson<maniJSON>(request.downloadHandler.text);
+                Debug.Log(getJSON.keta);
+                Debug.Log(getJSON.wheelCounter);
+            }
+        }
     }
 }
