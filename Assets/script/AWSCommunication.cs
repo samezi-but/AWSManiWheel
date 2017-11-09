@@ -5,6 +5,8 @@ using UnityEngine.Networking;
 
 public class AWSCommunication : MonoBehaviour
 {
+    // 1データあたりの最大カウンタ
+    private const ulong maniCounterLimit = 999999999999;
     public string url;
 
     // Use this for initialization
