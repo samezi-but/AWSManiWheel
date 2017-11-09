@@ -4,12 +4,11 @@ using UnityEngine.UI;
 public class WheelAddRotation : MonoBehaviour {
     public Transform mainWheel;
     public Rigidbody WheelRigidBody;
-    public Text WheelRotationText;
-    public int wheelIntCount = 0;
 
     private float defaultRotation;
     private bool rotationMinusSwitch = false;
 
+    public GameMaster gamemaster;
 	// Use this for initialization
 	void Start () {
         defaultRotation = mainWheel.rotation.y;
@@ -19,7 +18,6 @@ public class WheelAddRotation : MonoBehaviour {
 	void Update () {
         Vector3 dir = Vector3.up; // Y軸ということ
 
-        WheelRotationText.text = wheelIntCount.ToString();
         if (Input.GetMouseButtonDown(0) == true)
         {
             WheelRigidBody.AddTorque(dir, ForceMode.Impulse);
@@ -33,7 +31,7 @@ public class WheelAddRotation : MonoBehaviour {
     {
         if(rotationMinusSwitch == true && mainWheel.rotation.y > defaultRotation)
         {
-            wheelIntCount++;
+            gamemaster.userManiWheelCounter++;
         }
 
         if(mainWheel.rotation.y < 0.0f)
