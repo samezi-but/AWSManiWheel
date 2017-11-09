@@ -9,6 +9,7 @@ public class AWSCommunication : MonoBehaviour
     private const ulong maniCounterLimit = 999999999999;
     public string url;
     public ulong masterCounter = 0;
+    public float getTime = 10.0f;
 
     // Use this for initialization
     void Start () {
@@ -29,12 +30,12 @@ public class AWSCommunication : MonoBehaviour
 
     public maniJSON getJSON;
 
-    public void clickCommunicationButton(ulong wheelCount)
+    public void AWSManiwheelCountUp(ulong wheelCount)
     {
         StartCoroutine(postManiWheelCounterJSON(wheelCount));
     }
 
-    // マニ車のカウントアップするメソッド
+    // AWSのマニ車のカウントアップするメソッド
     private IEnumerator postManiWheelCounterJSON(ulong wheelCount)
     {
         maniJSON maniJSONdata = new maniJSON();
@@ -54,11 +55,22 @@ public class AWSCommunication : MonoBehaviour
         //errorText.text = request.error;
     }
 
+    public void startGetWheelCount()
+    {
+        StartCoroutine(getLoopManiWheelCounterJSON());
+    }
+
+    private IEnumerator getLoopManiWheelCounterJSON()
+    {
+        while (true) {
+            StartCoroutine(getManiWheelCounterJSON());
+            yield return new WaitForSeconds(getTime);
+        }
+    }
     // マニ車のカウンタの１桁目を取得するメソッド
     private IEnumerator getManiWheelCounterJSON()
     {
         UnityWebRequest request = UnityWebRequest.Get(url);
-
         yield return request.SendWebRequest();
 
         if (request.isNetworkError)
@@ -71,7 +83,7 @@ public class AWSCommunication : MonoBehaviour
             if(request.responseCode == 200)
             {
                 // あとで使う（JSON)
-                //Debug.Log(request.downloadHandler.text);
+                Debug.Log(request.downloadHandler.text);
                 getJSON = JsonUtility.FromJson<maniJSON>(request.downloadHandler.text);
                 Debug.Log(getJSON.keta);
                 Debug.Log(getJSON.wheelCounter);

@@ -31,7 +31,7 @@ public class WheelAddRotation : MonoBehaviour {
     {
         if(rotationMinusSwitch == true && mainWheel.rotation.y > defaultRotation)
         {
-            gamemaster.userManiWheelCounter++;
+            gamemaster.userManiWheelCounterUp();
         }
 
         if(mainWheel.rotation.y < 0.0f)
