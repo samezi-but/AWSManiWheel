@@ -7,12 +7,7 @@ public class slotSpinController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        setSlotNumber(1);
-        slotCountUp();
-        slotCountUp();
-        slotCountUp();
-        slotCountUp();
-        slotCountUp();
+
     }
 
 	// Update is called once per frame
