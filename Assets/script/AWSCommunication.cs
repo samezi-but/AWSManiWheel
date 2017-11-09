@@ -8,6 +8,7 @@ public class AWSCommunication : MonoBehaviour
     // 1データあたりの最大カウンタ
     private const ulong maniCounterLimit = 999999999999;
     public string url;
+    public ulong masterCounter = 0;
 
     // Use this for initialization
     void Start () {
@@ -23,18 +24,18 @@ public class AWSCommunication : MonoBehaviour
     public class maniJSON
     {
         public int keta;
-        public int wheelCounter;
+        public ulong wheelCounter;
     }
 
     public maniJSON getJSON;
 
-    public void clickCommunicationButton(int wheelCount)
+    public void clickCommunicationButton(ulong wheelCount)
     {
         StartCoroutine(postManiWheelCounterJSON(wheelCount));
     }
 
     // マニ車のカウントアップするメソッド
-    private IEnumerator postManiWheelCounterJSON(int wheelCount)
+    private IEnumerator postManiWheelCounterJSON(ulong wheelCount)
     {
         maniJSON maniJSONdata = new maniJSON();
         maniJSONdata.keta = 1;
@@ -74,6 +75,7 @@ public class AWSCommunication : MonoBehaviour
                 getJSON = JsonUtility.FromJson<maniJSON>(request.downloadHandler.text);
                 Debug.Log(getJSON.keta);
                 Debug.Log(getJSON.wheelCounter);
+                masterCounter = getJSON.wheelCounter;
             }
         }
     }
