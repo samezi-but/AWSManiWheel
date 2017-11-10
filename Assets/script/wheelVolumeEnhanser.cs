@@ -10,7 +10,7 @@ public class wheelVolumeEnhanser : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        mix.SetFloat("wheelVolume", 0);
+
     }
 
 	// Update is called once per frame
