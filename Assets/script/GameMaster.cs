@@ -6,6 +6,8 @@ public class GameMaster : MonoBehaviour {
     private ulong userManiWheelCounter = 0;
     private ulong allManiWheelCounter = 0;
     private ulong userTempCounter = 0;
+    private ulong differBufferCount = 0;
+
     public float postTimeDuration = 10.0f;
 
     public AWSCommunication awscommunication;
@@ -44,19 +46,24 @@ public class GameMaster : MonoBehaviour {
         animationslot.setCountUpYourSpinCounter();
     }
 
-    public void allManiWheelCountUpDifference( ulong differCount)
+    public void addManiWheelCountDifferense( ulong differCount)
     {
-        StartCoroutine(AWSSpinAnimationStepCount(differCount));
+        differBufferCount = +differCount;
+    }
+    public void allManiWheelCountUpDifference()
+    {
+        StartCoroutine(AWSSpinAnimationStepCount());
     }
 
-    private IEnumerator AWSSpinAnimationStepCount(ulong count)
+    private IEnumerator AWSSpinAnimationStepCount()
     {
         ulong i = 0;
 
-        while(i < count) {
+        while(i < differBufferCount) {
             yield return new WaitForSeconds(1.0f);
             animationslot.setCountUpAWSSpinCounter();
             i++;
         }
+        differBufferCount = 0;
     }
 }

@@ -103,7 +103,8 @@ public class AWSCommunication : MonoBehaviour
                 masterCounter = getJSON.wheelCounter;
                 differenceCounter = masterCounter - beforeMasterCounter;
 
-                gamemaster.allManiWheelCountUpDifference(differenceCounter);
+                gamemaster.addManiWheelCountDifferense(differenceCounter);
+                gamemaster.allManiWheelCountUpDifference();
             }
         }
     }
