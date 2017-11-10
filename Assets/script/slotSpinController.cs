@@ -19,8 +19,21 @@ public class slotSpinController : MonoBehaviour {
         slotAnimator.SetInteger("InitializeDisplayNumber", setNumber);
     }
 
+    public int getSlotNumber()
+    {
+        return slotAnimator.GetInteger("InitializeDisplayNumber");
+    }
+
     public void slotCountUp()
     {
+        int wheelCounter = getSlotNumber();
+        setSlotNumber(wheelCounter + 1);
         slotAnimator.SetTrigger("CountUp");
+
+        wheelCounter = getSlotNumber();
+        if(wheelCounter >= 10)
+        {
+            setSlotNumber(0);
+        }
     }
 }

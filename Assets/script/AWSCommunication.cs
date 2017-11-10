@@ -85,7 +85,7 @@ public class AWSCommunication : MonoBehaviour
                 // あとで使う（JSON)
                 Debug.Log(request.downloadHandler.text);
                 getJSON = JsonUtility.FromJson<maniJSON>(request.downloadHandler.text);
-                Debug.Log(getJSON.keta);
+                //Debug.Log(getJSON.keta);
                 Debug.Log(getJSON.wheelCounter);
                 masterCounter = getJSON.wheelCounter;
             }

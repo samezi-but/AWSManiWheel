@@ -9,6 +9,7 @@ public class GameMaster : MonoBehaviour {
     public float postTimeDuration = 10.0f;
 
     public AWSCommunication awscommunication;
+    public animationSlotController animationslot;
 
 	// Use this for initialization
 	void Start () {
@@ -34,5 +35,6 @@ public class GameMaster : MonoBehaviour {
     {
         userTempCounter++;
         userManiWheelCounter++;
+        animationslot.setCountUpYourSpinCounter();
     }
 }
