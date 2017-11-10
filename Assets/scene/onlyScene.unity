@@ -1196,7 +1196,7 @@ MonoBehaviour:
   WheelRigidBody: {fileID: 168900146}
   maxAngularVelocity: 9
   soundMargin: 0.0000005
-  soundCheckDuration: 3
+  soundCheckDuration: 6
   gamemaster: {fileID: 1022858897}
 --- !u!114 &1022858896
 MonoBehaviour:
