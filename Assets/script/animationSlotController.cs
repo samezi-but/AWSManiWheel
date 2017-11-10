@@ -11,15 +11,15 @@ public class animationSlotController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        setInitialSpinCounter(199998999999, yourSpinController);
+
     }
 
 	// Update is called once per frame
 	void Update () {
-
 	}
 
-    public void setInitialYourSpinCounter (ulong setCounter){
+    public void setInitialYourSpinCounter (ulong setCounter)
+    {
         setInitialSpinCounter(setCounter, yourSpinController);
     }
 
@@ -52,6 +52,11 @@ public class animationSlotController : MonoBehaviour {
         setCountUpSpinCounter(yourSpinController);
     }
 
+    public void setCountUpAWSSpinCounter()
+    {
+        setCountUpSpinCounter(masterSpinController);
+    }
+
     // ありがたい功徳をカウントアップする
     private void setCountUpSpinCounter(slotSpinController[] slotSpinController)
     {
@@ -63,7 +68,6 @@ public class animationSlotController : MonoBehaviour {
             for(int i = 2; i <= ketaCount; i++)
             {
                 count = slotSpinController[i - 1].getSlotNumber();
-                Debug.LogWarning(count);
                 slotSpinController[i - 1].slotCountUp();
                 if (count != 9)
                 {

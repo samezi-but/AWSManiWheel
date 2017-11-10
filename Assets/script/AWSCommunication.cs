@@ -8,12 +8,16 @@ public class AWSCommunication : MonoBehaviour
     // 1データあたりの最大カウンタ
     private const ulong maniCounterLimit = 999999999999;
     public string url;
-    public ulong masterCounter = 0;
+    private ulong masterCounter = 0;
+    private ulong differenceCounter = 0;
+    private ulong beforeMasterCounter = 0;
     public float getTime = 10.0f;
 
+    public GameMaster gamemaster;
+    private bool firstExecuted = false;
     // Use this for initialization
     void Start () {
-        StartCoroutine(getManiWheelCounterJSON());
+
 	}
 
 	// Update is called once per frame
@@ -67,7 +71,7 @@ public class AWSCommunication : MonoBehaviour
             yield return new WaitForSeconds(getTime);
         }
     }
-    // マニ車のカウンタの１桁目を取得するメソッド
+    // マニ車のカウンタの１行目を取得するメソッド
     private IEnumerator getManiWheelCounterJSON()
     {
         UnityWebRequest request = UnityWebRequest.Get(url);
@@ -79,16 +83,30 @@ public class AWSCommunication : MonoBehaviour
         }
         else
         {
-            Debug.Log(request.responseCode);
+            //Debug.Log(request.responseCode);
             if(request.responseCode == 200)
             {
                 // あとで使う（JSON)
-                Debug.Log(request.downloadHandler.text);
+                Debug.Log(" data : " + request.downloadHandler.text);
                 getJSON = JsonUtility.FromJson<maniJSON>(request.downloadHandler.text);
                 //Debug.Log(getJSON.keta);
-                Debug.Log(getJSON.wheelCounter);
+                //Debug.Log(getJSON.wheelCounter);
+
+                if (firstExecuted == false)
+                {
+                    masterCounter = getJSON.wheelCounter;
+                    beforeMasterCounter = getJSON.wheelCounter;
+                    gamemaster.setAllManiWheelCounter(masterCounter);
+                    firstExecuted = true;
+                }
+                beforeMasterCounter = masterCounter;
                 masterCounter = getJSON.wheelCounter;
+                differenceCounter = masterCounter - beforeMasterCounter;
+
+                gamemaster.allManiWheelCountUpDifference(differenceCounter);
             }
         }
     }
+
+
 }

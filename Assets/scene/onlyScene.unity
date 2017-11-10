@@ -1095,8 +1095,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: https://n3i7nlj1ni.execute-api.ap-northeast-1.amazonaws.com/testapi
-  masterCounter: 0
   getTime: 10
+  gamemaster: {fileID: 1022858897}
 --- !u!114 &1022858897
 MonoBehaviour:
   m_ObjectHideFlags: 0
