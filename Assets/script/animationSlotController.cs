@@ -11,7 +11,7 @@ public class animationSlotController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        setInitialYourSpinCounter(199998999999);
+        setInitialSpinCounter(199998999999, yourSpinController);
     }
 
 	// Update is called once per frame
@@ -19,8 +19,18 @@ public class animationSlotController : MonoBehaviour {
 
 	}
 
+    public void setInitialYourSpinCounter (ulong setCounter){
+        setInitialSpinCounter(setCounter, yourSpinController);
+    }
+
+    public void setInitialAWSSpinCounter(ulong setCounter)
+    {
+        setInitialSpinCounter(setCounter, masterSpinController);
+    }
+
+
     // カウンターを初期化する
-    public void setInitialYourSpinCounter(ulong setCounter)
+    private void setInitialSpinCounter(ulong setCounter, slotSpinController[] slotSpinController)
     {
         ulong culcrateSetNumber = setCounter;
         for (ulong i = 1; i <= ketaCount; i++)
@@ -28,7 +38,7 @@ public class animationSlotController : MonoBehaviour {
             ulong answer = 0;
             answer = culcrateSetNumber % 10;
 
-            yourSpinController[i - 1].setSlotNumber((int)answer);
+            slotSpinController[i - 1].setSlotNumber((int)answer);
             culcrateSetNumber = culcrateSetNumber / 10;
             if(culcrateSetNumber == 0)
             {
@@ -37,19 +47,24 @@ public class animationSlotController : MonoBehaviour {
         }
     }
 
-    // カウンターアップする
     public void setCountUpYourSpinCounter()
     {
+        setCountUpSpinCounter(yourSpinController);
+    }
+
+    // ありがたい功徳をカウントアップする
+    private void setCountUpSpinCounter(slotSpinController[] slotSpinController)
+    {
         int count = 0;
-        count = yourSpinController[0].getSlotNumber();
-        yourSpinController[0].slotCountUp();
+        count = slotSpinController[0].getSlotNumber();
+        slotSpinController[0].slotCountUp();
 
         if(count == 9) {
             for(int i = 2; i <= ketaCount; i++)
             {
-                count = yourSpinController[i - 1].getSlotNumber();
+                count = slotSpinController[i - 1].getSlotNumber();
                 Debug.LogWarning(count);
-                yourSpinController[i - 1].slotCountUp();
+                slotSpinController[i - 1].slotCountUp();
                 if (count != 9)
                 {
                     break;
