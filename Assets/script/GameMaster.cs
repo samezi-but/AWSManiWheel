@@ -12,9 +12,12 @@ public class GameMaster : MonoBehaviour {
 
     public AWSCommunication awscommunication;
     public animationSlotController animationslot;
+    public yourKudokuSaveAndLoad yourkudoku;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        userManiWheelCounter = yourkudoku.loadKudoku();
+        animationslot.setInitialYourSpinCounter(userManiWheelCounter);
         awscommunication.startGetWheelCount();
         StartCoroutine(postWheelCountAndResetTempCount());
 	}
@@ -44,6 +47,7 @@ public class GameMaster : MonoBehaviour {
         userTempCounter++;
         userManiWheelCounter++;
         animationslot.setCountUpYourSpinCounter();
+        yourkudoku.saveKudoku(userManiWheelCounter);
     }
 
     public void addManiWheelCountDifferense( ulong differCount)

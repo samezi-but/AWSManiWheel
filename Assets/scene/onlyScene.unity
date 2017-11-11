@@ -1160,6 +1160,7 @@ GameObject:
   - component: {fileID: 1022858896}
   - component: {fileID: 1022858895}
   - component: {fileID: 1022858898}
+  - component: {fileID: 1022858899}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -1226,6 +1227,7 @@ MonoBehaviour:
   postTimeDuration: 10
   awscommunication: {fileID: 1022858896}
   animationslot: {fileID: 1022858898}
+  yourkudoku: {fileID: 1022858899}
 --- !u!114 &1022858898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,6 +1265,17 @@ MonoBehaviour:
   - {fileID: 1523421839}
   - {fileID: 1119425020}
   - {fileID: 619357003}
+--- !u!114 &1022858899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022858893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2029657b44bc014c8745cf45c40efba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1026113319
 Prefab:
   m_ObjectHideFlags: 0
