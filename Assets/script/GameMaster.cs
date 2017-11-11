@@ -70,4 +70,9 @@ public class GameMaster : MonoBehaviour {
         }
         differBufferCount = 0;
     }
+
+    public ulong getYourWheelCount()
+    {
+        return userManiWheelCounter;
+    }
 }

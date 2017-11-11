@@ -8,6 +8,7 @@ public class animationSlotController : MonoBehaviour {
     public slotSpinController[] yourSpinController = new slotSpinController[ketaCount];
     public slotSpinController[] masterSpinController = new slotSpinController[ketaCount];
 
+    public GameMaster gamemaster;
 
     // Use this for initialization
     void Start () {
@@ -47,6 +48,7 @@ public class animationSlotController : MonoBehaviour {
         }
     }
 
+
     public void setCountUpYourSpinCounter()
     {
         setCountUpSpinCounter(yourSpinController);
@@ -60,20 +62,58 @@ public class animationSlotController : MonoBehaviour {
     // ありがたい功徳をカウントアップする
     private void setCountUpSpinCounter(slotSpinController[] slotSpinController)
     {
-        int count = 0;
-        count = slotSpinController[0].getSlotNumber();
-        slotSpinController[0].slotCountUp();
-
-        if(count == 9) {
-            for(int i = 2; i <= ketaCount; i++)
+        int nowNumber = slotSpinController[0].getSlotNumber();
+        int beforeNumber = 0;
+        bool[] flag = new bool[ketaCount];
+        bool firstFlag = false;
+        if (nowNumber == 9)
+        {
+            for (int i = 1; i < ketaCount; i++)
             {
-                count = slotSpinController[i - 1].getSlotNumber();
-                slotSpinController[i - 1].slotCountUp();
-                if (count != 9)
+                beforeNumber = slotSpinController[i].getSlotNumber();
+                if(firstFlag == false)
+                {
+                    flag[i] = true;
+                }
+                else {
+                    flag[i] = false;
+                }
+
+                if (beforeNumber == 9)
+                {
+                    flag[i] = true;
+                }
+                else
                 {
                     break;
                 }
             }
         }
+
+        for (int i = 1; i < ketaCount; i++)
+        {
+            if (flag[i] == true)
+            {
+                slotSpinController[i].slotCountUp();
+            }
+        }
+
+        slotSpinController[0].slotCountUp();
+    }
+
+    private int getSlotCount(ulong setCounter, int keta)
+    {
+        ulong answer = 0;
+        for (ulong i = 0; i <= ketaCount; i++)
+        {
+            answer = 0;
+            answer = setCounter % 10;
+            setCounter = setCounter / 10;
+            if ((ulong)keta == i)
+            {
+                break;
+            }
+        }
+        return (int)answer;
     }
 }
