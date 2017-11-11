@@ -19,6 +19,7 @@ public class yourKudokuSaveAndLoad : MonoBehaviour {
     {
         string ketaStringCount = kudokuCount.ToString();
         PlayerPrefs.SetString(yourKudoku, ketaStringCount);
+        PlayerPrefs.Save();
     }
 
     public ulong loadKudoku()
