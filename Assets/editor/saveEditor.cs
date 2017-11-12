@@ -17,7 +17,7 @@ public class saveEditor : Editor
         Rect rect = GUILayoutUtility.GetRect(10, 20);
         if (GUILayout.Button("ローカルにセーブ"))
         {
-            PlayerPrefs.SetString("KUDOKU", "999998");
+            PlayerPrefs.SetString("KUDOKU", "0");
         }
         //　シリアライズオブジェクトのプロパティの変更を更新
         serializedObject.ApplyModifiedProperties();
