@@ -8,12 +8,18 @@ AnimatorController:
   m_Name: animatedSlotAnimationControllerNumberBase
   serializedVersion: 5
   m_AnimatorParameters:
+  - m_Name: CountUp
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: InitializeDisplayNumber
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: -1
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -34,9 +40,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 2
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102582057517583886}
   m_Solo: 0
@@ -82,9 +88,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 2
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102582057517583886}
   m_Solo: 0
@@ -106,9 +112,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 7
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102052243781176788}
   m_Solo: 0
@@ -130,9 +136,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 6
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102225056178797628}
   m_Solo: 0
@@ -154,9 +160,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 9
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102444537659122702}
   m_Solo: 0
@@ -202,9 +208,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 6
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102225056178797628}
   m_Solo: 0
@@ -226,9 +232,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 5
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102348272659294540}
   m_Solo: 0
@@ -250,9 +256,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 8
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102615385142665306}
   m_Solo: 0
@@ -274,9 +280,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 3
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102424319549343568}
   m_Solo: 0
@@ -298,9 +304,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 1
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102329270933497974}
   m_Solo: 0
@@ -322,9 +328,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 4
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102602567855444664}
   m_Solo: 0
@@ -370,9 +376,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 7
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102052243781176788}
   m_Solo: 0
@@ -394,8 +400,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102021142958203606}
@@ -418,9 +424,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 4
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102602567855444664}
   m_Solo: 0
@@ -466,9 +472,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 9
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102444537659122702}
   m_Solo: 0
@@ -490,9 +496,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 3
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102424319549343568}
   m_Solo: 0
@@ -538,8 +544,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102899696854375152}
@@ -562,8 +568,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102021142958203606}
@@ -586,9 +592,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 5
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102348272659294540}
   m_Solo: 0
@@ -706,9 +712,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: InitializeDisplayNumber
-    m_EventTreshold: 8
+  - m_ConditionMode: 1
+    m_ConditionEvent: CountUp
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102615385142665306}
   m_Solo: 0
