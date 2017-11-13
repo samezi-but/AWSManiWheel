@@ -33,6 +33,7 @@ public class animationSlotController : MonoBehaviour {
     // カウンターを初期化する
     private void setInitialSpinCounter(ulong setCounter, slotSpinController[] slotSpinController)
     {
+        slotSpinController[0].setSlotNumber(0);
         ulong culcrateSetNumber = setCounter;
         for (ulong i = 1; i <= ketaCount; i++)
         {
@@ -43,6 +44,10 @@ public class animationSlotController : MonoBehaviour {
             culcrateSetNumber = culcrateSetNumber / 10;
             if(culcrateSetNumber == 0)
             {
+                for(ulong j = i; j < ketaCount; j++)
+                {
+                    slotSpinController[j].setSlotNumber(0);
+                }
                 break;
             }
         }
@@ -66,6 +71,7 @@ public class animationSlotController : MonoBehaviour {
         int beforeNumber = 0;
         bool[] flag = new bool[ketaCount];
         bool firstFlag = false;
+        Debug.LogWarning("setCountUpSpinCounter firstSlotNumber is :" + nowNumber.ToString());
         if (nowNumber == 9)
         {
             for (int i = 1; i < ketaCount; i++)
@@ -94,11 +100,26 @@ public class animationSlotController : MonoBehaviour {
         {
             if (flag[i] == true)
             {
-                slotSpinController[i].slotCountUp();
+                //slotSpinController[i].slotCountUp();
+                StartCoroutine(countUpShift(slotSpinController, flag));
             }
         }
 
         slotSpinController[0].slotCountUp();
+    }
+
+    private IEnumerator countUpShift(slotSpinController[] slotContloller, bool[] ketaUpFlag)
+    {
+        Debug.LogWarning("countUpShift calling");
+        for(int i = 1; i<ketaCount; i++)
+        {
+            if (ketaUpFlag[i] == true)
+            {
+                Debug.LogWarning("counter:[" + ketaUpFlag[i].ToString()+"]");
+                slotContloller[i].slotCountUp();
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     private int getSlotCount(ulong setCounter, int keta)

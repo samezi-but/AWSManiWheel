@@ -169,7 +169,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -366,7 +366,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -663,7 +663,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -735,7 +735,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   wheelvolume: {fileID: 1714609030}
   maniWheel: {fileID: 168900145}
   WheelRigidBody: {fileID: 168900146}
-  maxAngularVelocity: 9
+  maxAngularVelocity: 1000
   soundMargin: 0.0000005
   soundCheckDuration: 6
   gamemaster: {fileID: 1022858897}
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5f891eb929614409381cdf93cf92b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postTimeDuration: 2
+  postTimeDuration: 10
   awscommunication: {fileID: 1022858896}
   animationslot: {fileID: 1022858898}
   yourkudoku: {fileID: 1022858899}
@@ -1230,7 +1230,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -1311,7 +1311,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -1437,7 +1437,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -1555,7 +1555,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -1745,7 +1745,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -1871,7 +1871,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -2237,7 +2237,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
@@ -2567,7 +2567,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1e3e887750a286f42bb9eaf53e6043dd, type: 2}
+      objectReference: {fileID: 9100000, guid: aad0ac01b2b44884aa1fda4c3091e8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e52b7be9fce3654ab0f2f37164a8617, type: 2}
   m_IsPrefabParent: 0
