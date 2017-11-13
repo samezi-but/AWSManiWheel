@@ -25,7 +25,7 @@ public class WheelAddRotation : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         Vector3 dir = Vector3.up; // Y軸ということ
 
         if (Input.GetMouseButtonDown(0) == true)
